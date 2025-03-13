@@ -1,5 +1,6 @@
 package com.example.task8adao;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -17,6 +18,7 @@ public class HelloController {
     @FXML private TextField nameField;
     @FXML private TextField countField;
     @FXML private ComboBox<Tag> tagComboBox;
+    @FXML private TextField tagField;
 
     private ProductDAO productDAO = new ListProductDAO(); // Используем интерфейс
 
@@ -114,4 +116,25 @@ public class HelloController {
         alert.setContentText(message);
         alert.showAndWait();
     }
+
+    @FXML
+    private void addTag() {
+        String tagName = tagField.getText();
+        if (!tagName.isEmpty()) {
+            productDAO.addTag(productDAO.getTags().size() + 1, tagName);
+            tagComboBox.setItems(productDAO.getTags()); // Обновление списка тегов
+            tagField.clear(); // Очистка поля ввода
+        } else {
+            showAlert("Ошибка", "Введите название тега!");
+        }
+    }
+
+    @FXML
+    private void clearFields() {
+        nameField.clear();
+        countField.clear();
+        tagComboBox.getSelectionModel().clearSelection();
+        tagField.clear();
+    }
+
 }

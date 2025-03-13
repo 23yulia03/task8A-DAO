@@ -16,18 +16,25 @@
         </columns>
     </TableView>
 
-    <!-- Поля ввода -->
+    <!-- Поля ввода для продуктов -->
     <HBox spacing="10">
         <TextField fx:id="nameField" promptText="Название"/>
         <TextField fx:id="countField" promptText="Количество"/>
         <ComboBox fx:id="tagComboBox" promptText="Выберите тег"/>
     </HBox>
 
-    <!-- Кнопки управления -->
+    <!-- Кнопки управления продуктами -->
     <HBox spacing="10" alignment="CENTER">
         <Button text="Добавить" onAction="#addProduct"/>
         <Button text="Обновить" onAction="#updateProduct"/>
         <Button text="Удалить" onAction="#deleteProduct"/>
+        <Button text="Очистить поля" onAction="#clearFields"/>
+    </HBox>
+
+    <!-- Поля для добавления нового тега -->
+    <HBox spacing="10">
+        <TextField fx:id="tagField" promptText="Введите новый тег"/>
+        <Button text="Добавить тег" onAction="#addTag"/>
     </HBox>
 
 </VBox>
