@@ -3,9 +3,13 @@ package com.example.task8adao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+/**
+ * Класс "ListProductDAO" реализует интерфейс ProductDAO.
+ * Использует коллекции для хранения списка продуктов и категорий.
+ */
 public class ListProductDAO implements ProductDAO {
-    private ObservableList<Product> products = FXCollections.observableArrayList();
-    private ObservableList<Tag> tags = FXCollections.observableArrayList();
+    private ObservableList<Product> products = FXCollections.observableArrayList(); // Список продуктов
+    private ObservableList<Tag> tags = FXCollections.observableArrayList();         // Список тегов (категорий)
 
     @Override
     public ObservableList<Product> getProducts() {

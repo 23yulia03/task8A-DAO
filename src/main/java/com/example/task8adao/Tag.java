@@ -5,18 +5,10 @@ package com.example.task8adao;
  * Каждый тег имеет уникальный идентификатор и название.
  */
 public class Tag {
-    // Уникальный идентификатор тега
-    private int id;
+    private int id;         // Уникальный идентификатор тега
+    private String name;    // Название тега (категории)
 
-    // Название тега (категории)
-    private String name;
-
-    /**
-     * Конструктор для создания нового тега.
-     *
-     * @param id   - уникальный идентификатор тега
-     * @param name - название тега
-     */
+    // Конструктор для создания нового тега.
     public Tag(int id, String name) {
         this.id = id;
         this.name = name;

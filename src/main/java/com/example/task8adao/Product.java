@@ -1,14 +1,16 @@
 package com.example.task8adao;
 
 /**
- * Класс "Продукт", содержит информацию о товаре.
+ * Класс "Продукт", представляет товар в системе.
+ * Каждый продукт имеет уникальный идентификатор, название, количество и категорию (тег).
  */
 public class Product {
-    private int id;
-    private String name;
-    private int count;
-    private Tag tag;
+    private int id;         // Уникальный идентификатор продукта
+    private String name;    // Название продукта
+    private int count;      // Количество на складе
+    private Tag tag;        // Категория продукта (тег)
 
+    // Конструктор для создания нового продукта.
     public Product(int id, String name, int count, Tag tag) {
         this.id = id;
         this.name = name;
@@ -20,7 +22,6 @@ public class Product {
         return id;
     }
 
-    // Добавляем метод setId
     public void setId(int id) {
         this.id = id;
     }
@@ -29,20 +30,20 @@ public class Product {
         return name;
     }
 
-    public int getCount() {
-        return count;
-    }
-
-    public Tag getTag() {
-        return tag;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
 
+    public int getCount() {
+        return count;
+    }
+
     public void setCount(int count) {
         this.count = count;
+    }
+
+    public Tag getTag() {
+        return tag;
     }
 
     public void setTag(Tag tag) {

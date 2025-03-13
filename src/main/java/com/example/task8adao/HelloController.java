@@ -4,6 +4,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+/**
+ * Класс "HelloController" управляет взаимодействием между UI и данными.
+ * Обрабатывает ввод, обновление и удаление товаров.
+ */
 public class HelloController {
 
     @FXML private TableView<Product> table;
