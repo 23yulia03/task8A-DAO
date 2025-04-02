@@ -1,5 +1,7 @@
 package com.example.task8adao;
 
+import java.time.LocalDate;
+
 /**
  * Класс "Продукт", представляет товар в системе.
  * Каждый продукт имеет уникальный идентификатор, название, количество и категорию (тег).
@@ -14,8 +16,15 @@ public class Product {
     public Product(int id, String name, int count, Tag tag) {
         this.id = id;
         this.name = name;
-        this.count = count;
         this.tag = tag;
+
+        // Проверка на високосный год
+        int currentYear = LocalDate.now().getYear();
+        if (isLeapYear(currentYear)) {
+            this.count = count * 2; // Увеличение количества в 2 раза
+        } else {
+            this.count = count;
+        }
     }
 
     public int getId() {
@@ -48,6 +57,11 @@ public class Product {
 
     public void setTag(Tag tag) {
         this.tag = tag;
+    }
+
+    // Метод для проверки, является ли год високосным
+    public boolean isLeapYear(int year) {
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
 
     @Override
